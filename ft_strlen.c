@@ -6,16 +6,18 @@
 /*   By: chmondev <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/20 14:21:13 by chmondev          #+#    #+#             */
-/*   Updated: 2018/09/20 14:34:50 by chmondev         ###   ########.fr       */
+/*   Updated: 2018/09/25 18:20:02 by chmondev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strlen(char *str)
+#include <string.h>
+
+size_t		ft_strlen(const char *str)
 {
 	int i;
 
 	i = 0;
-	while(str[i])
+	while(str[i] != '\0')
 		i++;
 	return (i);
 }

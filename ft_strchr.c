@@ -6,9 +6,11 @@
 /*   By: chmondev <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/20 14:04:06 by chmondev          #+#    #+#             */
-/*   Updated: 2018/09/20 14:06:09 by chmondev         ###   ########.fr       */
+/*   Updated: 2018/09/25 18:21:54 by chmondev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <string.h>
 
 char	*ft_strchr(char *s, int c)
 {
@@ -16,8 +18,10 @@ char	*ft_strchr(char *s, int c)
 
 	g = (char)c;
 	while(*s != g)
+	{
+		if(*s == '\0')
+			return(NULL);
 		s++;
-	if(*s == g)
-		return(s);
-	return(0);
+	}
+	return(s);
 }

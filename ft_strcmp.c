@@ -6,11 +6,11 @@
 /*   By: chmondev <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/20 14:08:11 by chmondev          #+#    #+#             */
-/*   Updated: 2018/09/20 14:33:51 by chmondev         ###   ########.fr       */
+/*   Updated: 2018/09/25 14:31:33 by chmondev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strcmp(char *s1, char *s2)
+int		ft_strcmp(const char *s1, const char *s2)
 {
 	int i;
 
