@@ -14,10 +14,7 @@
 
 char	*ft_strchr(char *s, int c)
 {
-	char g;
-
-	g = (char)c;
-	while(*s != g)
+	while(*s != (char)c)
 	{
 		if(*s == '\0')
 			return(NULL);
