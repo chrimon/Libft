@@ -16,22 +16,20 @@ GCC = gcc
 
 REMO = rm -f
 
-FLAGS = -Wall -Wextra -Werror -c -I
+CFLAGS = -Wall -Wextra -Werror -c -I
 
 SRC = ft_isdigit.c ft_strchr.c ft_strcpy.c ft_strncpy.c\
 ft_toupper.c ft_memset.c ft_strcmp.c ft_strlen.c ft_tolower.c
 
-OBJ = $(SRC:.c =.o) 
+OBJ = $(SRC:.c=.o) 
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
+	$(GCC) $(CFLAGS) $(SRC)
 	ar rcs $(NAME) $(OBJ)
-
-$(OBJ): $(SRC)
-	$(GCC) $(FLAGS) $(SRC)
-
-clean: $(OBJ)
+	
+clean:
 	$(REMO) $(OBJ)
 
 fclean: clean
