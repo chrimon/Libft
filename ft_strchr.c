@@ -6,19 +6,19 @@
 /*   By: chmondev <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/20 14:04:06 by chmondev          #+#    #+#             */
-/*   Updated: 2018/09/25 18:21:54 by chmondev         ###   ########.fr       */
+/*   Updated: 2018/10/03 21:54:25 by chmondev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-char	*ft_strchr(char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
-	while(*s != (char)c)
+	while (*s != (char)c)
 	{
-		if(*s == '\0')
-			return(NULL);
+		if (*s == '\0')
+			return (NULL);
 		s++;
 	}
-	return(s);
+	return ((char*)s);
 }

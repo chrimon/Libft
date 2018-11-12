@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strequ.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chmondev <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/20 14:11:37 by chmondev          #+#    #+#             */
-/*   Updated: 2018/09/26 14:45:48 by chmondev         ###   ########.fr       */
+/*   Created: 2018/10/25 14:58:48 by chmondev          #+#    #+#             */
+/*   Updated: 2018/11/12 11:12:13 by chmondev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dst, const char *src)
-{
-	int i;
+#include "libft.h"
 
-	i = 0;
-	while (src[i] != '\0')
+int		ft_strequ(char const *s1, char const *s2)
+{
+	if (!s1 || !s2 || (ft_strlen(s1) != ft_strlen(s2)))
+		return (0);
+	while (*s1 && *s2)
 	{
-		dst[i] = src[i];
-		i++;
+		if (*s1 != *s2)
+			return (0);
+		s1++;
+		s2++;
 	}
-	dst[i] = '\0';
-	return (dst);
+	return (1);
 }

@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chmondev <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/20 14:11:37 by chmondev          #+#    #+#             */
-/*   Updated: 2018/09/26 14:45:48 by chmondev         ###   ########.fr       */
+/*   Created: 2018/10/23 16:07:12 by chmondev          #+#    #+#             */
+/*   Updated: 2018/11/11 12:23:14 by chmondev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dst, const char *src)
+int		ft_strncmp(const char *s1, const char *s2, int n)
 {
 	int i;
 
 	i = 0;
-	while (src[i] != '\0')
-	{
-		dst[i] = src[i];
+	if (n == 0)
+		return (0);
+	while (s1[i] == s2[i] && s1[i] != '\0' && s2[i] != '\0' && i < (n - 1))
 		i++;
-	}
-	dst[i] = '\0';
-	return (dst);
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }

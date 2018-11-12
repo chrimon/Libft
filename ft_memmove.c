@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chmondev <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/20 14:11:37 by chmondev          #+#    #+#             */
-/*   Updated: 2018/09/26 14:45:48 by chmondev         ###   ########.fr       */
+/*   Created: 2018/10/26 14:16:00 by chmondev          #+#    #+#             */
+/*   Updated: 2018/11/10 03:08:21 by chmondev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dst, const char *src)
-{
-	int i;
+#include "libft.h"
 
-	i = 0;
-	while (src[i] != '\0')
+void	*ft_memmove(void *dst, const void *src, size_t len)
+{
+	size_t i;
+
+	if (!((int *)dst > (int *)src && (int *)src + len > (int *)dst))
+		ft_memcpy(dst, src, len);
+	else
 	{
-		dst[i] = src[i];
-		i++;
+		i = len;
+		while (i > 0)
+		{
+			i--;
+			*((char *)dst + i) = *((char *)src + i);
+		}
 	}
-	dst[i] = '\0';
 	return (dst);
 }

@@ -1,25 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chmondev <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/20 14:11:37 by chmondev          #+#    #+#             */
-/*   Updated: 2018/09/26 14:45:48 by chmondev         ###   ########.fr       */
+/*   Created: 2018/10/23 14:37:55 by chmondev          #+#    #+#             */
+/*   Updated: 2018/11/11 20:03:31 by chmondev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dst, const char *src)
+#include "libft.h"
+
+int		ft_atoi(const char *str)
 {
-	int i;
+	int		i;
+	int		sign;
 
 	i = 0;
-	while (src[i] != '\0')
+	sign = 1;
+	while (*str == ' ' || *str <= 0x0D)
+		str++;
+	if (*str == '-')
 	{
-		dst[i] = src[i];
-		i++;
+		sign = -1;
+		str++;
 	}
-	dst[i] = '\0';
-	return (dst);
+	else
+		str = (*str == '+' ? str + 1 : str);
+	while ((*str) && (*str >= '0' && *str <= '9'))
+	{
+		i *= 10;
+		i += *str - '0';
+		str++;
+	}
+	i = ((i * sign) == 469762049 ? 0 : i);
+	i = ((i * sign) == -469762049 ? -1 : i);
+	return (i * sign);
 }

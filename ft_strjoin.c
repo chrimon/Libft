@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chmondev <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/20 14:11:37 by chmondev          #+#    #+#             */
-/*   Updated: 2018/09/26 14:45:48 by chmondev         ###   ########.fr       */
+/*   Created: 2018/10/25 16:08:30 by chmondev          #+#    #+#             */
+/*   Updated: 2018/11/12 14:11:47 by chmondev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dst, const char *src)
-{
-	int i;
+#include "libft.h"
 
-	i = 0;
-	while (src[i] != '\0')
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	dst[i] = '\0';
-	return (dst);
+char	*ft_strjoin(char const *s1, char const *s2)
+{
+	char	*s;
+	int		len;
+
+	if (!s1)
+		return ((char*)s2);
+	if (!s2)
+		return ((char*)s1);
+	if (!s1 && !s2)
+		return (NULL);
+	len = ft_strlen(s1) + ft_strlen(s2);
+	if (!(s = (char*)malloc(sizeof(*s) * (len + 1))))
+		return (NULL);
+	ft_strcpy(s, s1);
+	ft_strcat(s, s2);
+	return (s);
 }

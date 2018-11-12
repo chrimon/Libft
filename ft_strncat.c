@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chmondev <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/20 14:11:37 by chmondev          #+#    #+#             */
-/*   Updated: 2018/09/26 14:45:48 by chmondev         ###   ########.fr       */
+/*   Created: 2018/10/26 12:13:51 by chmondev          #+#    #+#             */
+/*   Updated: 2018/11/01 16:25:17 by chmondev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dst, const char *src)
+#include "libft.h"
+
+char	*ft_strncat(char *s1, const char *s2, size_t n)
 {
-	int i;
+	int		i;
+	size_t	j;
 
 	i = 0;
-	while (src[i] != '\0')
-	{
-		dst[i] = src[i];
+	j = 0;
+	while (s1[i] != '\0')
 		i++;
+	while (s2[j] != '\0' && j < n)
+	{
+		s1[i + j] = s2[j];
+		j++;
 	}
-	dst[i] = '\0';
-	return (dst);
+	s1[i + j] = '\0';
+	return (s1);
 }

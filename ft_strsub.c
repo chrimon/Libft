@@ -1,25 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chmondev <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/20 14:11:37 by chmondev          #+#    #+#             */
-/*   Updated: 2018/09/26 14:45:48 by chmondev         ###   ########.fr       */
+/*   Created: 2018/10/25 15:06:25 by chmondev          #+#    #+#             */
+/*   Updated: 2018/11/12 12:25:59 by chmondev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dst, const char *src)
+#include "libft.h"
+
+char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	int i;
+	char	*g;
+	size_t	i;
 
 	i = 0;
-	while (src[i] != '\0')
+	if (s)
 	{
-		dst[i] = src[i];
-		i++;
+		g = (char*)malloc(len + 1);
+		if (g)
+		{
+			while (s[start] != '\0' && i < len)
+			{
+				g[i] = s[start];
+				i++;
+				start++;
+			}
+			g[i] = '\0';
+			return (g);
+		}
+		return (NULL);
 	}
-	dst[i] = '\0';
-	return (dst);
+	return (NULL);
 }
