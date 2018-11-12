@@ -6,7 +6,7 @@
 #    By: chmondev <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/11 19:07:30 by chmondev          #+#    #+#              #
-#    Updated: 2018/11/12 15:10:24 by chmondev         ###   ########.fr        #
+#    Updated: 2018/11/12 15:12:17 by chmondev         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,8 @@ ft_isascii.c ft_memmove.c ft_strcat.c ft_strjoin.c ft_strnstr.c \
 ft_isdigit.c ft_memset.c ft_strchr.c ft_strlcat.c ft_strrchr.c \
 ft_isprint.c ft_putchar.c ft_strclr.c ft_strlen.c ft_strsplit.c \
 ft_itoa.c ft_putchar_fd.c ft_strcmp.c ft_strmap.c ft_strstr.c \
-ft_lstadd.c ft_lstdel.c ft_lstdelone.c ft_lstiter.c
+ft_lstadd.c ft_lstdel.c ft_lstdelone.c ft_lstiter.c \
+
 OBJ = $(SRC:.c=.o) 
 
 all: $(NAME) 
