@@ -6,7 +6,7 @@
 /*   By: chmondev <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/11 19:56:44 by chmondev          #+#    #+#             */
-/*   Updated: 2018/11/12 14:39:02 by chmondev         ###   ########.fr       */
+/*   Updated: 2018/11/12 15:14:40 by chmondev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,12 @@
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
+typedef struct	s_list
+{
+	void	*content;
+	size_t			content_size;
+	struct s_list	*next;
+}				t_list;
 
 int				ft_isprint(int c);
 int				ft_isascii(int c);
